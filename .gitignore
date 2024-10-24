@@ -3,3 +3,9 @@
 ################################################################################
 
 /AsyncAwait.Tasks/.vs/AsyncAwait.Tasks
+/AsyncAwait.Tasks/AsyncAwait.Task1.CancellationTokens/bin/Debug/net6.0
+/AsyncAwait.Tasks/AsyncAwait.Task1.CancellationTokens/obj
+/AsyncAwait.Tasks/AsyncAwait.Task2.CodeReviewChallenge/bin/Debug/net6.0
+/AsyncAwait.Tasks/AsyncAwait.Task2.CodeReviewChallenge/obj
+/AsyncAwait.Tasks/CloudServices/obj
+/AsyncAwait.Tasks/CloudServices/bin/Debug/net6.0

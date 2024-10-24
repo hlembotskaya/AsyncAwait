@@ -23,11 +23,15 @@ public class StatisticMiddleware
     {
         string path = context.Request.Path;
 
-        var staticRegTask = Task.Run(
-            () => _statisticService.RegisterVisitAsync(path)
-                .ConfigureAwait(false)
-                .GetAwaiter().OnCompleted(UpdateHeaders));
+        //var staticRegTask = Task.Run(
+        //    () => _statisticService.RegisterVisitAsync(path).ConfigureAwait(false).GetAwaiter().OnCompleted(UpdateHeaders)); //TO DO
+
+        var staticRegTask = _statisticService.RegisterVisitAsync(path); //add try-catch
+
         Console.WriteLine(staticRegTask.Status); // just for debugging purposes
+        await staticRegTask;
+
+        UpdateHeaders();
 
         void UpdateHeaders()
         {

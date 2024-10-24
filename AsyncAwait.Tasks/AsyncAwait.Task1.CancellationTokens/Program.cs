@@ -55,7 +55,7 @@ internal class Program
 
     private static async void CalculateSum(int n)
     {
-        
+       
         if (cancellationTokenSourceQueue.Count > 0)
         {
             Console.WriteLine("Cancel previous cancellationTokenSource started");
@@ -71,8 +71,7 @@ internal class Program
         {
             Console.WriteLine($"The task for {n} started... Enter N to cancel the request:");
 
-            Task<long> currentTask = Task.Run(() => Calculator.Calculate(n, cancellationTokenSourceQueue.Last().Token));
-            long sum = await currentTask;
+            long sum = await Task.Run(() => Calculator.Calculate(n, cancellationTokenSourceQueue.Last().Token));
 
             Console.WriteLine($"Sum for {n} = {sum}.");
 
