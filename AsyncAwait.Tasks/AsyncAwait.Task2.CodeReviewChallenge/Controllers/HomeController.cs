@@ -31,9 +31,9 @@ public class HomeController : Controller
         return View();
     }
 
-    public async Task<IActionResult> Help()
+    public ActionResult Help()
     {
-        ViewBag.RequestInfo = await _assistant.RequestAssistanceAsync("guest").ConfigureAwait(false);// Review - not sure here, should we leawe ConfigureAwait
+        ViewBag.RequestInfo = _assistant.RequestAssistanceAsync("guest");// Review - not sure here, should we leawe ConfigureAwait
         return View();
     }
 
